@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 use reqwest::Client;
 use serde::{Deserialize, Serialize};
-use std::fs;
+use std::{env, fs};
 
 const OPENAI_URL: &str = "https://api.openai.com/v1/chat/completions";
 
@@ -28,7 +28,8 @@ struct Choice {
 }
 #[server(endpoint = "call_openai")]
 pub async fn call_openai(user_input: String) -> Result<(String), ServerFnError> {
-    let OPENAI_API_KEY: String = fs::read_to_string("env/OPENAI_API_KEY")?;
+    let openai_file = fs::read_to_string("env/OPENAI_API_KEY").unwrap_or_default();
+    let OPENAI_API_KEY: String = fs::read_to_string("env/OPENAI_API_KEY").unwrap_or_else(|_| openai_file);
 
     let client = Client::new();
     let request_body = OpenAIRequest {
