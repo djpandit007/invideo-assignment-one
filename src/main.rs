@@ -5,6 +5,7 @@ use views::{Shader, Home, Calculator};
 
 mod components;
 mod views;
+mod backend;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 enum Route {
