@@ -15,8 +15,8 @@ pub fn Navbar() -> Element {
                 "Home"
             }
             Link {
-                to: Route::Blog { id: 1 },
-                "Blog"
+                to: Route::Shader {},
+                "Shader"
             }
             Link {
                 to: Route::Calculator {},
