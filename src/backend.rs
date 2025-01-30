@@ -29,7 +29,7 @@ struct Choice {
 #[server(endpoint = "call_openai")]
 pub async fn call_openai(user_input: String) -> Result<(String), ServerFnError> {
     let openai_file = fs::read_to_string("env/OPENAI_API_KEY").unwrap_or_default();
-    let OPENAI_API_KEY: String = fs::read_to_string("env/OPENAI_API_KEY").unwrap_or_else(|_| openai_file);
+    let OPENAI_API_KEY: String = env::var("OPENAI_API_KEY").unwrap_or_else(|_| openai_file);
 
     let client = Client::new();
     let request_body = OpenAIRequest {
