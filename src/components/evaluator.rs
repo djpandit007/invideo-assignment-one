@@ -38,6 +38,6 @@ async fn evaluator_server(input: String) -> Result<String, ServerFnError> {
     }
     match eval_str(&input) {
         Ok(result) => Ok(result.to_string()),
-        Err(error) => Ok(String::from("Not a valid expression!")),
+        Err(_) => Ok(String::from("Not a valid expression!")),
     }
 }
