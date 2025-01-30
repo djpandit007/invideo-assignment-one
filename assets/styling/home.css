@@ -1,0 +1,13 @@
+#home {
+    width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background-color: #1e222d;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#home>p {
+    margin: auto 0px 0px auto;
+}

@@ -15,12 +15,12 @@ pub fn Navbar() -> Element {
                 "Home"
             }
             Link {
-                to: Route::Shader {},
-                "Shader"
-            }
-            Link {
                 to: Route::Calculator {},
                 "Calculator"
+            }
+            Link {
+                to: Route::Shader {},
+                "Shader"
             }
         }
 
