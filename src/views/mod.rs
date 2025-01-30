@@ -1,8 +1,8 @@
 mod home;
 pub use home::Home;
 
-mod blog;
+mod shader;
 mod calculator;
 
-pub use blog::Blog;
+pub use shader::Shader;
 pub use calculator::Calculator;

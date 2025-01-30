@@ -1,19 +1,18 @@
 use dioxus::prelude::*;
 
 use components::Navbar;
-use views::{Blog, Home, Calculator};
+use views::{Shader, Home, Calculator};
 
 mod components;
 mod views;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
-#[rustfmt::skip]
 enum Route {
     #[layout(Navbar)]
     #[route("/")]
-    Home {},
-    #[route("/blog/:id")]
-    Blog { id: i32 },
+    Home,
+    #[route("/shader")]
+    Shader,
     #[route("/calculator")]
     Calculator,
 }
