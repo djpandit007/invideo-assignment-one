@@ -24,7 +24,7 @@ pub fn Shader() -> Element {
                     let value = crate::backend::call_openai(text_prompt.to_string()).await;
                     shader_response.set(value.unwrap());
                 },
-                "Generate"
+                "Generate code"
             }
 
             div {
